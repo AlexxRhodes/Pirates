@@ -5,9 +5,17 @@ public class Case {
 	public int numCase;
 	
 	//Constructeur
-	public Case(int numCase) {
+	public Case() {
 		super();
+		this.numCase = 0;
+	}
+
+	public void setNumCase(int numCase) {
 		this.numCase = numCase;
+	}
+
+	public int getNumCase() {
+		return numCase;
 	}
 
 }

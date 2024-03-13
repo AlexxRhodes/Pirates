@@ -7,7 +7,24 @@ public class Pion {
 	private int position;
 	Couleur color;
 	
+	public Pion(Couleur color) {
+		super();
+		this.color = color;
+	}
+	
+	public int getPosition() {
+		return position;
+	}
+
+	public void setPosition(int position) {
+		this.position = position;
+	}
+	
 	public Couleur getColor() {
 		return color;
+	}
+
+	public void setColor(Couleur color) {
+		this.color = color;
 	}
 }

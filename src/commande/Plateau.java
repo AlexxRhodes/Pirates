@@ -10,7 +10,8 @@ public class Plateau {
 		super();
 		//Initialisation des numéros des cases
 		for(int i=0; i<taille; i++) {
-			cases[i].numCase = i+1;
+			cases[i] = new Case();
+			cases[i].setNumCase(i+1);
 		}
 	}
 }

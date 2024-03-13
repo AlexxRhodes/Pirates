@@ -18,4 +18,20 @@ public class Joueur {
 		this.couleur = pion.getColor();
 		HP = PointDeVie;
 	}
+	
+	public String getNom() {
+		return nom;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	public Pion getPion() {
+		return pion;
+	}
+
+	public void setPion(Pion pion) {
+		this.pion = pion;
+	}
 }
