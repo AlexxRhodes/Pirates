@@ -1,7 +1,6 @@
 package affichage;
 
 import commande.Joueur;
-import commande.Pion;
 
 public class Affichage {
 	//Déclaration de numCase (indice du tableau Case cases[])
@@ -25,17 +24,26 @@ public class Affichage {
 	public static void aff_start(Joueur j1, Joueur j2) {
 		System.out.println("Début de la partie :");
 		System.out.println("\tPion 1 : ");
-		System.out.println("\t\tPosition : "+ j1.getPion().getPosition());
-		System.out.println("\t\tCouleur : "+ j1.getPion().getColor());
+		System.out.println("\t\tPosition : "+ j1.getPosition());
+		System.out.println("\t\tCouleur : "+ j1.getCouleur());
 		System.out.println("\tPion 2 : ");
-		System.out.println("\t\tPosition : "+ j2.getPion().getPosition());
-		System.out.println("\t\tCouleur : "+ j2.getPion().getColor());
+		System.out.println("\t\tPosition : "+ j2.getPosition());
+		System.out.println("\t\tCouleur : "+ j2.getCouleur());
+		System.out.println("_________________________________________");
+		System.out.println("");
 	}
 
 	public static void aff_changePos(Joueur j) {
-		System.out.println("Début de la partie :");
 		System.out.println(j.getNom() + " : ");
-		System.out.println("\tPosition : "+ j.getPion().getPosition());
+		System.out.println("\tPosition : "+ j.getPosition());
+		System.out.println("_________________________________________");
+		System.out.println("");
+	}
+
+	public static void aff_gagnant(Joueur winner) {
+		System.out.println("VICTOIRE DE : " + winner.getNom());
+		System.out.println("_________________________________________");
+		System.out.println("");
 	}
 
 }

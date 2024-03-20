@@ -9,6 +9,7 @@ public class Joueur {
 	private String nom;
 	private int HP;
 	private Couleur couleur;
+	private int position;
 	private Pion pion;
 	
 	//Constructeur
@@ -17,6 +18,14 @@ public class Joueur {
 		this.nom = name;
 		this.couleur = pion.getColor();
 		HP = PointDeVie;
+	}
+	
+	public int getPosition() {
+		return position;
+	}
+
+	public void setPosition(int position) {
+		this.position = position;
 	}
 	
 	public String getNom() {
@@ -34,4 +43,13 @@ public class Joueur {
 	public void setPion(Pion pion) {
 		this.pion = pion;
 	}
+
+	public int getHP() {
+		return HP;
+	}
+	
+	public Couleur getCouleur() {
+		return couleur;
+	}
+
 }

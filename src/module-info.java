@@ -5,5 +5,5 @@
  * @author AlexxRhodes
  *
  */
-module LesGaulois {
+module pirates {
 }
