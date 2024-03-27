@@ -30,18 +30,22 @@ public class Jeu {
 	
 	public static void lancerPartie() {
 		boolean altern = true;
+		int nbTour = 0;
 		
 		//Boucle du jeu tant qu'il n'y a pas de gagnant
 		while(Plateau.existeGagnant(j1, j2) == null) {
 			if(altern) {
 				tourPirate(j1);
 				altern = !altern;
+				nbTour++;
 			}
 			else {
 				tourPirate(j2);
 				altern = !altern;
+				nbTour++;
 			}
 		}
+		System.out.println("Fin en "+ nbTour+ " tours\n");
 		
 		//Affichage du gagnant de la partie
 		Affichage.aff_gagnant(Plateau.existeGagnant(j1, j2));
@@ -50,27 +54,29 @@ public class Jeu {
 	public static void tourPirate(Pirate p) {
 		//Lancement des dés
 		de1.lancerDe();
-    	de2.lancerDe();
+    	// de2.lancerDe();
+		de2.setValeur(0);
     	Affichage.aff_lancerDe(de1.getValeur(), de2.getValeur());
     	
     	//Déplacement du pion
-    	p.setPosition(p.getPosition() + (de1.getValeur()+de2.getValeur()));
-    	
-    	if(p.getPosition()>=30) {
-    		p.setPosition(30);
-    	}else {
-    		//Affectation des effets des cases spéciales
-    		Case case_actuelle = plateau.getCases(p.getPosition()-1);
-        	if(case_actuelle.getCaseSpecial()) {
-        		if(case_actuelle instanceof CaseEffetHP) {
-        			CaseEffetHP c = ((CaseEffetHP)case_actuelle);
-        			c.getEffet().doEffect(p);
-        		}else {
-        			CaseEffetPosition c = ((CaseEffetPosition)case_actuelle);
-        			c.getEffet().doEffect(p);
-        		}
+		int nextPos = p.getPosition()+(de1.getValeur()+de2.getValeur());
+		if(nextPos <= 28 || nextPos == 30){	
+			p.setPosition(nextPos);
+		}else if(nextPos == 29){
+			p.setPosition(p.getPosition() - (de1.getValeur()+de2.getValeur()));
+		}
+
+    	//Affectation des effets des cases spéciales
+    	Case case_actuelle = plateau.getCases(p.getPosition()-1);
+        if(case_actuelle.getCaseSpecial()) {
+        	if(case_actuelle instanceof CaseEffetHP) {
+        		CaseEffetHP c = ((CaseEffetHP)case_actuelle);
+        		c.getEffet().doEffect(p);
+        	}else {
+        		CaseEffetPosition c = ((CaseEffetPosition)case_actuelle);
+        		c.getEffet().doEffect(p);
         	}
-    	}
+        }
 
     	Affichage.aff_changePos(p);
     }

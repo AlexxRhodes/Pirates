@@ -28,6 +28,7 @@ public class CaseEffetPosition extends Case{
 	public static void espererLiberation(Pirate p) {
 //		System.out.println("\t\t\tEspoir");
 		
+		
 	}
 	
 	public Effets getEffet() {

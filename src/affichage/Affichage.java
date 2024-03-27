@@ -21,7 +21,7 @@ public class Affichage {
 	public static void aff_lancerDe(int de1, int de2) {
 		System.out.println("Lancé de dé :");
 		System.out.println("\tDé 1 : "+ de1);
-		System.out.println("\tDé 2 : "+ de2 + "\t==> +" + (de1+de2));
+		System.out.println("\tDé 2 : "+ de2);
 	}
 	
 	public static void aff_start(Pirate j1, Pirate j2) {
