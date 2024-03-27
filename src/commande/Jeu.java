@@ -62,8 +62,10 @@ public class Jeu {
 		int nextPos = p.getPosition()+(de1.getValeur()+de2.getValeur());
 		if(nextPos <= 28 || nextPos == 30){	
 			p.setPosition(nextPos);
-		}else if(nextPos == 29){
+		}else if(p.getPosition() == 29){
 			p.setPosition(p.getPosition() - (de1.getValeur()+de2.getValeur()));
+		}else if(nextPos > 30){
+			p.setPosition(30-(nextPos-30));
 		}
 
     	//Affectation des effets des cases spéciales

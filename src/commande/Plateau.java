@@ -47,7 +47,7 @@ public class Plateau {
 		int[] pos = new int[NbCasesHP + NbCasePos];
 		
 		Effets[] effetsHP = {Effets.HOPITAL, Effets.COUP_DE_FEU};
-		Effets[] effetsPos = {Effets.PIEGE, Effets.SWITCH, Effets.PRISON};
+		Effets[] effetsPos = {Effets.PIEGE, Effets.SWITCH, Effets.PRISON, Effets.ESPOIR};
 		
 		for(int i=0; i<pos.length; i++) {
 			diff = true;
