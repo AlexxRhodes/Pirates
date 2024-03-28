@@ -47,6 +47,10 @@ public class Pirate {
 		return HP;
 	}
 	
+	public void setHP(int hP) {
+		HP = hP;
+	}
+
 	public Couleur getCouleur() {
 		return couleur;
 	}

@@ -18,41 +18,18 @@ public class Affichage {
 		System.out.println("");
 	}
 	
-	public static void aff_lancerDe(int de1, int de2) {
-		System.out.println("Lancé de dé :");
-		if(de2>0) {
-			System.out.println("\tDé 1 : "+ de1);
-			System.out.println("\tDé 2 : "+ de2);
-		}else {
-			System.out.println("\tDé : "+ de1);
-		}
-	}
-	
 	public static void aff_start(Pirate j1, Pirate j2) {
 		System.out.println("Début de la partie :");
-		System.out.println("\tPion 1 : ");
+		System.out.println("\tPion 1 : "+j1.getNom());
 		System.out.println("\t\tPosition : "+ j1.getPosition());
 		System.out.println("\t\tCouleur : "+ j1.getCouleur());
-		System.out.println("\tPion 2 : ");
+		System.out.println("\tPion 2 : "+ j2.getNom());
 		System.out.println("\t\tPosition : "+ j2.getPosition());
 		System.out.println("\t\tCouleur : "+ j2.getCouleur());
 		System.out.println("_________________________________________");
 		System.out.println("");
 	}
-
-	public static void aff_changePos(Pirate j) {
-		System.out.println(j.getNom() + " : ");
-		System.out.println("\tPosition : "+ (j.getPosition()));
-		System.out.println("_________________________________________");
-		System.out.println("");
-	}
-
-	public static void aff_gagnant(Pirate winner) {
-		System.out.println("VICTOIRE DE : " + winner.getNom());
-		System.out.println("_________________________________________");
-		System.out.println("");
-	}
-		
+	
 	public static void aff_plateau(Plateau plateau) {
 		System.out.println("Plateau :");	
 		
@@ -71,6 +48,28 @@ public class Affichage {
 		System.out.println("_________________________________________");
 		System.out.println("");
 	}
+	
+	public static void aff_lancerDe(int de1, int de2) {
+		System.out.print("\nLancé de dé :");
+		if(de2>0) {
+			System.out.println("\tDé 1 : "+ de1);
+			System.out.println("\tDé 2 : "+ de2);
+		}else {
+			System.out.println("\t +"+ de1);
+		}
+	}
+
+	public static void aff_changePos(Pirate j) {
+		System.out.println(j.getNom() + " : ");
+		System.out.println("\tPosition : "+ (j.getPosition())+"\tHP : "+ j.getHP()+"\n");
+	}
+
+	public static void aff_gagnant(Pirate winner, int nbTour) {
+		System.out.println("Fin en "+ nbTour+ " tours\n");
+		System.out.println("\t\tVICTOIRE DE : " + winner.getNom());
+		System.out.println("________________________________________________________");
+		System.out.println("");
+	}
 
 	public static void aff_casesSpe(int[] p) {
 		System.out.println("Cases Spéciales : ");
@@ -84,6 +83,19 @@ public class Affichage {
 		System.out.println("_________________________________________");
 		System.out.println("");
 	}
+	
+	public static void aff_depassement(Pirate pTete, Pirate pQueue) {
+		System.out.println("\n\tLe joueur "+pTete.getNom()+" prend la tête");
+		System.out.println("\t\t"+pQueue.getNom()+" perd 1HP !\n");
+		
+	}
+	
+	public static void aff_finTour() {
+		System.out.println("________________________________________________________\n");
+	}
 
+	public static void aff_separation() {
+		System.out.println("________________________________________________________");
+	}
 
 }
