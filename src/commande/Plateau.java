@@ -76,7 +76,7 @@ public class Plateau {
 		cases[28] = new CaseEffetPosition(Effets.ESPOIR, 29);
 		}
 		//Affichage des cases spéciales
-		Affichage.aff_casesSpe(pos);
+		Affichage.aff_casesSpe(cases);
 	}
 
 }
