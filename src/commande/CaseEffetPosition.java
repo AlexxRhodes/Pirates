@@ -20,7 +20,7 @@ public class CaseEffetPosition extends Case{
 		
 	}
 	
-	public static void echangerPos(Pirate p) {
+	public static void echangerPos(Pirate p1, Pirate p2) {
 //		System.out.println("\t\t\tSwitch");
 		
 	}

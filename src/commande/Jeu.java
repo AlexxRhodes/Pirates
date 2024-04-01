@@ -121,6 +121,5 @@ public class Jeu {
 		
 		//Boucle éxecutant le jeu
 		lancerPartie();
-    	
     }
 }
