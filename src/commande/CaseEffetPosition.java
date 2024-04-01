@@ -21,13 +21,23 @@ public class CaseEffetPosition extends Case{
 	}
 	
 	public static void echangerPos(Pirate p1, Pirate p2) {
-//		System.out.println("\t\t\tSwitch");
+		System.out.println("\t\t\tSwitch");
+
+		Pion temp = new Pion(Couleur.BLEU);
+
+		temp = p1.getPion();
+
+		p1.setPion(p2.getPion());
+		p2.setPion(temp);
 		
 	}
 	
 	public static void bloquerPion(Pirate p) {
 //		System.out.println("\t\t\tPrison");
-		
+	System.out.println("\t\t\t|");
+	System.out.println("\t\tEffet :\t| Prison !");
+	System.out.println("\t\t\t|\n");
+
 	}
 	
 	public static void espererLiberation(Pirate p) {

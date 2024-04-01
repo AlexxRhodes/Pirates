@@ -30,12 +30,14 @@ public enum Effets{
 	},
 	SWITCH("Switch"){
         @Override
-        public void doEffect(Pirate p) {}
-        @Override
         public void doEffect(Pirate p1, Pirate p2) {
             // Implémentation de l'effet HP
             CaseEffetPosition.echangerPos(p1, p2);
         }
+        @Override
+        public void doEffect(Pirate p) {
+            System.out.println("\t\t\tSwitch");}
+        
 	},
 	PRISON("Prison"){
         @Override

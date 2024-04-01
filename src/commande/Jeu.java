@@ -36,13 +36,16 @@ public class Jeu {
 		
 		//Boucle du jeu tant qu'il n'y a pas de gagnant
 		while(Plateau.existeGagnant(j1, j2) == null) {
+			checkJail(j1);
+			checkJail(j2);
+
 			//Alternation du tour de chaque joueur
-			if(nbTour%2 == 0) {
+			if(nbTour%2 == 0 && !j1.isPrison()) {
 				tourPirate(j1);
 				nbTour++;
 				Affichage.aff_separation();
 			}
-			else {
+			else if(nbTour%2 == 1 && !j2.isPrison()){
 				tourPirate(j2);
 				nbTour++;
 
@@ -56,6 +59,28 @@ public class Jeu {
 		Affichage.aff_gagnant(Plateau.existeGagnant(j1, j2), nbTour);
 	}
 	
+	private static void checkJail(Pirate j12) {
+		Case temp = plateau.getCases(j12.getPosition());
+
+		boolean prison = false;
+
+		if(temp instanceof CaseEffetPosition){
+			if(((CaseEffetPosition)temp).getEffet() == Effets.PRISON){
+				prison = true;
+			}else{
+				prison = false;
+			}
+		}else{
+			prison = false;
+		}
+
+		if(!(j12.isPrison())){
+			j12.setPrison(prison);
+		}else{
+			j12.setPrison(false);
+		}
+	}
+
 	public static void tourPirate(Pirate p) {
 		//Lancement des dés
 		de1.lancerDe();

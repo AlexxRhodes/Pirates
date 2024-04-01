@@ -11,12 +11,22 @@ public class Pirate {
 	private Couleur couleur;
 	private int position;
 	private Pion pion;
+	private boolean prison;
 	
+	public boolean isPrison() {
+		return prison;
+	}
+
+	public void setPrison(boolean prison) {
+		this.prison = prison;
+	}
+
 	//Constructeur
 	public Pirate(String name, Pion pion, int PointDeVie) {
 		this.nom = name;
 		this.couleur = pion.getColor();
 		HP = PointDeVie;
+		this.prison = false;
 	}
 	
 	public int getPosition() {
