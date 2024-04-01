@@ -12,6 +12,11 @@ public class CaseEffetPosition extends Case{
 
 	public static void retourCaseDepart(Pirate p) {
 //		System.out.println("\t\t\tPiège");
+		p.setPosition(1);
+
+		System.out.println("\t\t\t|");
+		System.out.println("\t\tEffet :\t| Piège : Retour case départ ");
+		System.out.println("\t\t\t|\n");
 		
 	}
 	
