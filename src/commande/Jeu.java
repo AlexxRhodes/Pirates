@@ -36,22 +36,30 @@ public class Jeu {
 		
 		//Boucle du jeu tant qu'il n'y a pas de gagnant
 		while(Plateau.existeGagnant(j1, j2) == null) {
-			checkJail(j1);
-			checkJail(j2);
 
 			//Alternation du tour de chaque joueur
-			if(nbTour%2 == 0 && !j1.isPrison()) {
-				tourPirate(j1);
+			if(nbTour%2 == 0) {
+				if(!j1.isPrison()){
+					tourPirate(j1);
+					Affichage.aff_separation();
+				}else{
+					Affichage.aff_prison(j1);
+				}
 				nbTour++;
-				Affichage.aff_separation();
+				checkJail(j1);
 			}
-			else if(nbTour%2 == 1 && !j2.isPrison()){
-				tourPirate(j2);
+			else if(nbTour%2 == 1){
+				if(!j2.isPrison()){
+					tourPirate(j2);
+	
+					checkDepassement();
+					Affichage.aff_separation();
+					Affichage.aff_finTour();
+				}else{
+					Affichage.aff_prison(j2);
+				}
 				nbTour++;
-
-		    	checkDepassement();
-				Affichage.aff_separation();
-				Affichage.aff_finTour();
+				checkJail(j2);
 			}
 		}
 		
@@ -64,17 +72,17 @@ public class Jeu {
 
 		boolean prison = false;
 
-		if(temp instanceof CaseEffetPosition){
-			if(((CaseEffetPosition)temp).getEffet() == Effets.PRISON){
-				prison = true;
+		
+		if(!j12.isPrison()){
+			if(temp instanceof CaseEffetPosition){
+					if(((CaseEffetPosition)temp).getEffet() == Effets.PRISON){
+						prison = true;
+					}else{
+						prison = false;
+					}
 			}else{
 				prison = false;
 			}
-		}else{
-			prison = false;
-		}
-
-		if(!(j12.isPrison())){
 			j12.setPrison(prison);
 		}else{
 			j12.setPrison(false);
@@ -103,7 +111,7 @@ public class Jeu {
     	Affichage.aff_changePos(p);
 
     	//Affectation des effets des cases spéciales
-    	Case case_actuelle = plateau.getCases(p.getPosition()-1);
+    	Case case_actuelle = plateau.getCases(p.getPosition());
         if(case_actuelle.getCaseSpecial()) {
         	if(case_actuelle instanceof CaseEffetHP) {
         		CaseEffetHP c = ((CaseEffetHP)case_actuelle);

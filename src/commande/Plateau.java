@@ -36,7 +36,7 @@ public class Plateau {
 	}
 	
 	public Case getCases(int numCase) {
-		return cases[numCase];
+		return cases[numCase-1];
 	}
 	
 	public void initialiserCasesSpeciales() {

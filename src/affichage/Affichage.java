@@ -100,9 +100,11 @@ public class Affichage {
 		System.out.println("________________________________________________________");
 	}
 
-	public static void aff_prison(Pirate j1) {
+	public static void aff_prison(Pirate j) {
+		aff_changePos(j);
 		System.out.println("\t\tVOUS ÊTES EN PRISON");
-		System.out.println("\tVOUS JOUEREZ AU PROCHAIN TOUR");
+		System.out.println("\t   VOUS JOUEREZ AU PROCHAIN TOUR\n");
+		aff_separation();
 	}
 
 }
