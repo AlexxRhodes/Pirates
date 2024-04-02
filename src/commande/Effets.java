@@ -35,8 +35,7 @@ public enum Effets{
             CaseEffetPosition.echangerPos(p1, p2);
         }
         @Override
-        public void doEffect(Pirate p) {
-            System.out.println("\t\t\tSwitch");}
+        public void doEffect(Pirate p) {}
         
 	},
 	PRISON("Prison"){
@@ -69,6 +68,6 @@ public enum Effets{
 	}
 	
 	// Méthode abstraite pour effectuer l'effet
-    public abstract void doEffect(Pirate p);
     public abstract void doEffect(Pirate p1, Pirate p2);
+    public abstract void doEffect(Pirate p);
 }

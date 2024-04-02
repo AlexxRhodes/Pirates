@@ -9,8 +9,8 @@ public class Jeu {
 	public static Pion p1 = new Pion(Couleur.BLEU);
 	public static Pion p2 = new Pion(Couleur.ROUGE);
 	//Décalaration des joueurs
-	public static Pirate j1 = new Pirate("Alex", p1, 5);
-	public static Pirate j2 = new Pirate("Benoît", p2, 5);
+	public static Pirate j1 = new Pirate("Alex", p1, 3);
+	public static Pirate j2 = new Pirate("Benoît", p2, 3);
 	//Décalaration du dé
 	public static De de1 = new De();
 	public static De de2 = new De();
@@ -99,14 +99,15 @@ public class Jeu {
     	
 		int nextPos = p.getPosition()+(de1.getValeur()+de2.getValeur());
 		//Déplacement du pion
-		if(nextPos <= 28 || nextPos == 30){	
-			p.setPosition(nextPos);
-		}else if(p.getPosition() == 29){
+		if(p.getPosition() == 29){
 			p.setPosition(p.getPosition() - (de1.getValeur()+de2.getValeur()));
-		}else if(nextPos > 30){
-			p.setPosition(30-(nextPos-30));
-		}
-		
+		}else{ 
+			if(nextPos <= 30){
+				p.setPosition(nextPos);
+			}else if(nextPos > 30){
+				p.setPosition(30-(nextPos-30));
+			}
+		}		
 		
     	Affichage.aff_changePos(p);
 
@@ -115,11 +116,16 @@ public class Jeu {
         if(case_actuelle.getCaseSpecial()) {
         	if(case_actuelle instanceof CaseEffetHP) {
         		CaseEffetHP c = ((CaseEffetHP)case_actuelle);
-        		c.getEffet().doEffect(p);
+				c.getEffet().doEffect(p);
         	}else {
         		CaseEffetPosition c = ((CaseEffetPosition)case_actuelle);
-        		c.getEffet().doEffect(p);
+				if(c.getEffet() == Effets.SWITCH){
+					c.getEffet().doEffect(j1, j2);
+				}else{
+        			c.getEffet().doEffect(p);
+				}
         	}
+			System.out.println("");
         }
 
     	

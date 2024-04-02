@@ -103,7 +103,8 @@ public class Affichage {
 	public static void aff_prison(Pirate j) {
 		aff_changePos(j);
 		System.out.println("\t\tVOUS ÊTES EN PRISON");
-		System.out.println("\t   VOUS JOUEREZ AU PROCHAIN TOUR\n");
+		System.out.println("\t   VOUS JOUEREZ AU PROCHAIN TOUR");
+		aff_finTour();
 		aff_separation();
 	}
 
