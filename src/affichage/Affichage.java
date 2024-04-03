@@ -22,10 +22,10 @@ public class Affichage {
 		System.out.println("Début de la partie :");
 		System.out.println("\tPion 1 : " + j1.getNom());
 		System.out.println("\t\tPosition : " + j1.getPosition());
-		System.out.println("\t\tCouleur : " + j1.getCouleur());
+		System.out.println("\t\tCouleur : " + j1.getPion().getColor());
 		System.out.println("\tPion 2 : " + j2.getNom());
 		System.out.println("\t\tPosition : " + j2.getPosition());
-		System.out.println("\t\tCouleur : " + j2.getCouleur());
+		System.out.println("\t\tCouleur : " + j2.getPion().getColor());
 		System.out.println("_________________________________________");
 		System.out.println("");
 	}

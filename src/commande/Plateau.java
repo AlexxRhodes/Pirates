@@ -6,7 +6,7 @@ import affichage.Affichage;
 
 public class Plateau {
 	//Déclaration du plateau de taille modifiable
-	public int taille = 30;
+	private int taille = 30;
 	public Case[] cases = new Case[taille];
 	
 	//Constructeur

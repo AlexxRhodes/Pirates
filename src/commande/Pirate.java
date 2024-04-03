@@ -8,7 +8,6 @@ public class Pirate {
 	// pion : pion rattaché au Pirate 
 	private String nom;
 	private int HP;
-	private Couleur couleur;
 	private int position;
 	private Pion pion;
 	private boolean prison;
@@ -22,11 +21,11 @@ public class Pirate {
 	}
 
 	//Constructeur
-	public Pirate(String name, Pion pion, int PointDeVie) {
+	public Pirate(String name, Pion pion, int HP) {
 		this.nom = name;
-		this.couleur = pion.getColor();
-		HP = PointDeVie;
+		this.HP = HP;
 		this.prison = false;
+		this.pion = pion;
 	}
 	
 	public int getPosition() {
@@ -49,20 +48,12 @@ public class Pirate {
 		return pion;
 	}
 
-	public void setPion(Pion pion) {
-		this.pion = pion;
-	}
-
 	public int getHP() {
 		return HP;
 	}
 	
 	public void setHP(int hP) {
 		HP = hP;
-	}
-
-	public Couleur getCouleur() {
-		return couleur;
 	}
 
 }
