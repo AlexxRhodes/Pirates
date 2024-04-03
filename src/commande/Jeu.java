@@ -3,6 +3,7 @@ package commande;
 import affichage.Affichage;
 
 public class Jeu {
+	
 	//Déclaration du plateau
 	public static Plateau plateau = new Plateau();
 	//Déclaration des pions
