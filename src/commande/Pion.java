@@ -5,19 +5,10 @@ public class Pion {
 	// position : position du pion sur la plateau (correspond à l'indice du tableau Case cases[position-1]"
 	// couleur : enum (ROUGE ou BLEU)
 	Couleur color;
-	Case c = new Case();
 	
 	public Pion(Couleur color) {
 		super();
 		this.color = color;
-	}
-	
-	public int getPosition() {
-		return c.getNumCase();
-	}
-
-	public void setPosition(int position) {
-		this.c.numCase = position;
 	}
 	
 	public Couleur getColor() {
