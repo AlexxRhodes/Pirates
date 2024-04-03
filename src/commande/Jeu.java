@@ -39,7 +39,7 @@ public class Jeu {
 		while(Plateau.existeGagnant(j1, j2) == null) {
 
 			//Alternation du tour de chaque joueur
-			if(nbTour%2 == 0) {
+			if(nbTour%2 == 0) 	{
 				if(!j1.isPrison()){
 					tourPirate(j1);
 					Affichage.aff_separation();
@@ -53,12 +53,12 @@ public class Jeu {
 				if(!j2.isPrison()){
 					tourPirate(j2);
 	
-					checkDepassement();
 					Affichage.aff_separation();
 					Affichage.aff_finTour();
 				}else{
 					Affichage.aff_prison(j2);
 				}
+				checkDepassement();
 				nbTour++;
 				checkJail(j2);
 			}
@@ -108,7 +108,7 @@ public class Jeu {
 			}else if(nextPos > 30){
 				p.setPosition(30-(nextPos-30));
 			}
-		}		
+		}
 		
     	Affichage.aff_changePos(p);
 
