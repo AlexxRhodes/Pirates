@@ -92,7 +92,7 @@ public class Jeu {
 	public static void tourPirate(Pirate p) {
 		//Lancement des dés
 		de1.lancerDe();
-    	// de2.lancerDe();
+    	//de2.lancerDe();
 		de2.setValeur(0);
     	Affichage.aff_lancerDe(de1.getValeur(), de2.getValeur());
     	

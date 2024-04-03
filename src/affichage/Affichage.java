@@ -53,7 +53,7 @@ public class Affichage {
 		System.out.print("\nLancé de dé :");
 		if (de2 > 0) {
 			System.out.println("\tDé 1 : " + de1);
-			System.out.println("\tDé 2 : " + de2);
+			System.out.println("\t\tDé 2 : " + de2);
 		} else {
 			System.out.println("\t +" + de1);
 		}
@@ -104,8 +104,8 @@ public class Affichage {
 		aff_changePos(j);
 		System.out.println("\t\tVOUS ÊTES EN PRISON");
 		System.out.println("\t   VOUS JOUEREZ AU PROCHAIN TOUR");
-		aff_finTour();
 		aff_separation();
+		aff_finTour();
 	}
 
 }
